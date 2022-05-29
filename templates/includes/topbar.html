@@ -1,0 +1,49 @@
+<!-- Top header start -->
+<header class="top-header th-2 top-header-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-7">
+                <div class="list-inline">
+                    <a href="tel:+91-8851018186"><i class="fa fa-phone"></i>+91-88510 18186</a>
+                    <a href="mailto: info@facein.com"><i class="fa fa-envelope"></i>info@facein.com</a>
+                    <a href="{% url 'home' %}"><i class="fa fa-clock-o"></i>24*7 Available</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-5">
+                <ul class="top-social-media pull-right">
+
+                  {% if user.is_authenticated  %}
+                     {%  if  user.username == "admin@facein"  %}
+                     <li>
+                        <a href="{% url 'admin_dashboard' %}" class="sign-in"> Admin-Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="sign-in"><i class="fa fa-sign-out"></i> Logout</a>
+                        <form action="{% url 'logout' %}" id="logout" method="POST">
+                          {% csrf_token %}
+                          <input type="hidden">
+                        </form>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'dashboard' %}" class="sign-in"> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="javascript:{document.getElementById('logout').submit()}" class="sign-in"><i class="fa fa-sign-out"></i> Logout</a>
+                        <form action="{% url 'logout' %}" id="logout" method="POST">
+                          {% csrf_token %}
+                          <input type="hidden">
+                        </form>
+                    </li>
+                    {% endif %}
+                  {% else %}
+                    <li>
+                        <a href="{% url 'login' %}" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
+                    </li>
+                  {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Top header end -->

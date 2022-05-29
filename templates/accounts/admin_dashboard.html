@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %} | Admin-Dashboard {% endblock %}
+{% block content %}
+{% load static %}
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Admin-Dashboard</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active">Admin-Dashboard</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Admin-Dashboard Start   -->
+<div class="container mt-50 mb-50">
+        <div class="main-title" style="text-align:left !important; margin-top:2em;">
+            {% include 'includes/messages.html' %}
+              <h1>Welcome <span>Admin</span></h1>
+              <p1>New Registration | View Analytics</p1>
+        </div>
+        <div class="main-title text-center">
+            <h1>New<span> Registration</span></h1>
+            <p>Create Database ---> Add Images ---> Train Dataset</p>
+        </div>
+                <!-- Main title -->
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-info">
+                            <div class="number">1</div>
+                            <div class="icon">
+                                <img src="{% static 'img/favicon.ico' %}" alt="icon" style= "height: 2em; magin-botton: 1em;">
+                            </div>
+                            <div class="detail">
+                                <a href = "{% url 'register' %}" class="btn btn-lg btn-theme">Register</a>
+                                <p>Register the users through this section. Enter the basic details like name, username, and password to register the user. Once registration is done, add images of the users and then train the whole dataset.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-info">
+                            <div class="number">2</div>
+                            <div class="icon">
+                                <img src="{% static 'img/favicon.ico' %}" alt="icon" style= "height: 2em; magin-botton: 1em;">
+                            </div>
+                            <div class="detail">
+                                <a href = "{% url 'add_images' %}" class="btn btn-lg btn-theme">Add Images</a>
+                                <p>Add Images of the users through this section. The video feed will open to capture the images of the user and will close automatically after capturing 30 images. It takes approximately 14 seconds for a single user dataset.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-info">
+                            <div class="number">3</div>
+                            <div class="icon">
+                                <img src="{% static 'img/favicon.ico' %}" alt="icon" style= "height: 2em; magin-botton: 1em;">
+                            </div>
+                            <div class="detail">
+                                <a href = "{% url 'train' %}" class="btn btn-lg btn-theme">Train</a>
+                                <div class="page_loader"></div>
+                                <p>Train dataset of all the users in one go. Be patient and <b>don't refresh in between.</b> After complete training, a new window will automatically pop up showing the results. It takes approximately 1 minute for a dataset of three users.  </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <div class="main-title text-center">
+            <h1>Other<span> Features</span></h1>
+            <p>Analytics | Update Details | Demo Video </p>
+        </div>        
+                <!-- Main title -->
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-info">
+                            <div class="icon">
+                                <img src="{% static 'img/favicon.ico' %}" alt="icon" style= "height: 2em; magin-botton: 1em;">
+                            </div>
+                            <div class="detail">
+                                <a href = "{% url 'admin_analytics' %}" class="btn btn-lg btn-theme">Analytics</a>
+                                <div class="page_loader"></div>
+                                <p>See the analytics through this section. You can also search by username or by date to see the attendance records.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-info">
+                            <div class="icon">
+                                <img src="{% static 'img/favicon.ico' %}" alt="icon" style= "height: 2em; magin-botton: 1em;">
+                            </div>
+                            <div class="detail">
+                                <a href = "{% url 'update' %}" class="btn btn-lg btn-theme">Update</a>
+                                <div class="page_loader"></div>
+                                <p>Easily update the profile of the users through username. Simply fill-up the form and the information will get updated.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-info">
+                            <div class="icon">
+                                <img src="{% static 'img/favicon.ico' %}" alt="icon" style= "height: 2em; magin-botton: 1em;">
+                            </div>
+                            <div class="detail">
+                                <a href = "https://www.youtube.com/watch?v=5e0LxrLSzok&t=1s" target="_blank" class="btn btn-lg btn-theme"> Demo </a>
+                                <div class="page_loader"></div>
+                                <p>Still having doubts, don't worry we have left a demo video for your help. You can also contact us through customer care.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>
+<!-- Admin-Dashboard End   -->
+
+
+
+{% endblock %}

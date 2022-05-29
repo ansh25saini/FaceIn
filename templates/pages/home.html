@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+{% block title %} | Home {% endblock %}
+{% block content %}
+
+{% load humanize %}
+{% load static %}
+
+<!-- Introduction Section Ends -->
+<div class="banner" id="banner">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner banner-slider-inner text-center">
+            <div class="carousel-item banner-max-height active item-bg">
+                <img class="d-block w-100 h-100" src="{% static 'img/home-1.jpg' %}" alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                
+                    <h3>Automated Attendance System</h3>
+                    <h5>Use FaceIn to increase productivity and plug revenue  <br> leakages.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                </div>
+            </div>
+            <div class="carousel-item banner-max-height item-bg">
+                <img class="d-block w-100 h-100" src="{% static 'img/home-2.jpg' %}" alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                    <h3>Explore Your Dream Product</h3>
+                    <h5>Allow us to guide you through the innovative stress<br>
+                        free approach in marking attendance and maintaining records.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                </div>
+            </div>
+            <div class="carousel-item banner-max-height item-bg">
+                <img class="d-block w-100 h-100" src="{% static 'img/home-3.jpg' %}" alt="banner">
+                <div class="carousel-content container banner-info-2 bi-2 text-left">
+                    <h3>We Are Future</h3>    
+                    <h5>Face based attendance system is practically 100% <br>
+                        accurate and better than thumb-based or fingerprint systems.</h5>
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev none-580" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="slider-mover-left" aria-hidden="true">
+                <i class="fa fa-angle-left"></i>
+            </span>
+        </a>
+        <a class="carousel-control-next none-580" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="slider-mover-right" aria-hidden="true">
+                <i class="fa fa-angle-right"></i>
+            </span>
+        </a>
+    </div>
+</div>
+<!-- Banner end -->
+<!-- Introduction Section Ends -->
+
+<!--  Customers Section start -->
+<div class="featured-car content-area-5">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Our <span>Customers</span></h1>
+            <p>Trusted by 100+ Customers across the Globe</p>
+        </div>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 5, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 3}}, {"breakpoint": 768,"settings":{"slidesToShow": 2}}]}'>
+              {% for customer in customers %}
+                <div class="slick-slide-item">
+                    <div class="customer-block">
+                        <img src="{{customer.photo.url}}" alt="Customer" style="min-height: 100px; max-height: 100px;">
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            <div class="slick-btn">
+                <div class="slick-prev slick-arrow-buton sab-4">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="slick-next slick-arrow-buton sab-3">
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Customers Section end -->
+
+<!-- Features Section Start-->
+<div class="featured-car content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1><span>Features</span></h1>
+            <p>Powerful yet easy to use features to streamline Attendance</p>
+        </div>
+        <div class="row">
+            {% for feature in features %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="car-box">
+                        <div class="car-thumbnail">
+                            <a href="#" class="car-img">
+                              <img class="d-block w-100" src="{{feature.photo.url}}" alt="feature" class="img-fluid">
+                            </a>
+                        </div> 
+                        <div class="detail">
+                            <h4>
+                              <center>{{feature.description | safe}}</center>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Features Section End -->
+
+
+<!-- Review Section Start -->
+<div class="our-team content-area bg-grea-3">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Customer<span> Review </span></h1>
+            <p>"Our Customers - Our Strength"</p>
+        </div>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 4, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+              {% for review in reviews %}
+                <div class="slick-slide-item">
+                    <div class="team-1">
+                        <div class="photo">
+                            <a >
+                                <img src="{{ review.photo.url }}" alt="team-1" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="details">
+                            <h4>{{review.first_name}} {{review.last_name}}</h4>
+                            <h5>{{review.designation}}</h5>
+                        </div>
+                    </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Review Section end -->
+
+
+<!-- Question section start -->
+<div class="intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-12">
+                <div class="intro-text">
+                    <h3>Still Having Questions!</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="{% url 'contact' %}" class="btn btn-md">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Question section end -->
+
+
+{% endblock %}

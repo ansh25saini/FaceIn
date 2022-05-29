@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %} | Dashboard {% endblock %}
+{% block content %}
+{% load static %}
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Dashboard</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active">Dashboard</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!--   Dashboard Start   -->
+<div class="container mt-50 mb-50">
+      <div class="main-title" style="text-align:left !important; margin-top:2em;">
+        {% include 'includes/messages.html' %}
+            <h1>Welcome <span>{{user.first_name}}</span></h1>
+            <p1></p1>
+      </div>
+      <div class="main-title text-center">
+          <h1>Attendance<span> System</span></h1>
+          <p>Mark In | Mark Out | View Analytics</p>
+      </div>
+              <!-- Main title -->
+              <div class="row">
+                  <div class="col-lg-4 col-md-6 col-sm-6">
+                      <div class="service-info">
+                          <div class="icon">
+                              <img src="{% static 'img/favicon.ico' %}" alt="icon" style= "height: 2em; magin-botton: 1em;">
+                          </div>
+                          <div class="detail">
+                              <a href = "{% url 'mark_in' %}" class="btn btn-lg btn-theme">Mark In</a>
+                              <p>Use this to mark your attendance in. Press <b>p</b> after being recognized, to close the video feed. An email will also be sent automatically to you.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-6">
+                      <div class="service-info">
+                          <div class="icon">
+                            <img src="{% static 'img/favicon.ico' %}" alt="icon" style= "height: 2em; magin-botton: 1em;">
+                          </div>
+                          <div class="detail">
+                              <a href = "{% url 'mark_out' %}" class="btn btn-lg btn-theme">Mark Out</a>
+                              <p>Use this to mark your attendance out. Press <b>p</b> after being recognized, to close the video feed. An email will also be sent automatically to you.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-6">
+                      <div class="service-info">
+                          <div class="icon">
+                            <img src="{% static 'img/favicon.ico' %}" alt="icon" style= "height: 2em; magin-botton: 1em;">
+                          </div>
+                          <div class="detail">
+                              <a href = "{% url 'analytics' %}" class="btn btn-lg btn-theme">Analytics</a>
+                              <p>Use this to see the analytics of your attendance. Enter the duration during which you want to see the status and records will be shown. </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+</div>
+<!-- Dashboard End   -->
+
+
+
+{% endblock %}

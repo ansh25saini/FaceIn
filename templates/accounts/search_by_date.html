@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %} | Admin-Analytics {% endblock %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Admin-Analytics</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'admin_dashboard' %}">Admin-Dashboard</a></li>
+                <li class="active"><a href="{% url 'admin_analytics' %}">Admin-Analytics</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Search By Date Start -->
+<div class="container mt-50 mb-50">
+  {% include 'includes/messages.html' %}
+      <div class="main-title" style="text-align:left !important;">
+        <div class="row">
+          <a href =  "{% url 'search_by_date' %}" class="btn btn-lg btn-theme" style="margin-top:2em; margin-left:2em;">Search By Date</a>
+          <a href =  "{% url 'search_by_username' %}" class="btn btn-lg btn-theme" style="margin-left:5em; margin-top: 2em;">Search By Username</a></div>
+      </div>
+    </div>
+ </div>
+      
+<div class="container">
+  <div style="width: 400px">
+    <form method="POST" >
+     {% csrf_token %}
+        <fieldset class="form-group">
+        <legend class="border-bottom mb-4"> Select Date </legend>
+         {{form| crispy}}
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-info" type="submit" value="Create"> Submit</button>
+        </div>
+    </form>
+  </div>
+
+{% if qs %}
+<table  class="table" style="margin-top: 5em; ">
+  <thead class="thead-dark">
+    <tr>
+       <th scope="col">Date</th>
+       <th scope="col" >Username</th>
+       <th scope="col">Present</th>
+       <th scope="col">Time in</th>
+       <th scope="col">Time out </th>
+       <th scope="col">Hours </th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for item in qs %}
+    <tr> 
+      <td>{{ item.date }}</td>
+      <td>{{ item.user.username}}</td>
+      {% if item.present %}
+      <td> P </td>
+      {% else %}
+      <td> A </td>
+      {% endif %}
+      {% if item.time_in %}
+      <td>{{ item.time_in }}</td>
+      {% else %}
+      <td> - </td>
+      {% endif %}
+      {% if item.time_out %}
+      <td>{{ item.time_out }}</td>
+      {% else %}
+      <td> - </td>
+      {% endif %}
+      <td> {{item.hours}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<div class="card" style=" margin-top: 5em; margin-bottom: 10em;">
+  <img class="card-img-top" src="{% static 'img/attendance_graphs/hours_vs_users/1.png'%}" alt="Card image cap" style="width=50em; height=50em;">
+  <div class="card-body">
+   <p class="card-text" style="text-align: center;">Number of Hours Present Each Day.</p>
+  </div>
+</div>
+
+{% endif %}
+
+</div>
+<!-- Search By Date End -->
+
+{% endblock %}

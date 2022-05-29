@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} | Admin-Analytics {% endblock %}
+{% block content %}
+{% load static %}
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Admin-Analytics</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'admin_dashboard' %}">Admin-Dashboard</a></li>
+                <li class="active">Admin-Analytics</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Admin Analytics Section Start -->
+<div class="container mt-50 mb-50">
+        <div class="main-title" style="text-align:left !important; margin-top: 2em;">
+            {% include 'includes/messages.html' %}
+            <a href =  "{% url 'search_by_date' %}" class="btn btn-lg btn-theme">Advanced Search</a>
+        </div>
+        <div class="main-title text-center">
+            <h1>Today's<span> Statistics: <br></span> Total Present: <span>{{ users_present_today}}</span> / Total Strength: <span>{{ total_num_of_users }}</span></h1>
+        </div>
+        <!-- Main title -->
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="card" style=" margin-top: 2em; margin-bottom: 2em; height:48%; width: 60%">
+                <h class="card-text" style="text-align: center; margin-top: 1em;"><b>Total Present In This Week</b></h>
+                <img class="card-img-top" src="{% static 'img/attendance_graphs/this_week/1.png.'%}" alt="Card image cap">
+            </div>
+            <div class="card" style=" margin-top: 2em; margin-bottom: 2em; height:48%; width: 60%">
+                <h class="card-text" style="text-align: center; margin-top: 1em;"><b>Total Present In Last Week</b></h>
+                <img class="card-img-top" src="{% static 'img/attendance_graphs/last_week/1.png.'%}" alt="Card image cap">
+            </div>
+          </div>
+        </div>
+</div>
+<!-- Admin Analytics Section End -->
+
+
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+<!-- Changing Django-admin/login page logo with FaceIn logo - Start -->
+{% block branding %}
+  <h1 id="head">
+    <a href="/admin"><img src="{% static 'img/logos/logo.png' %}" alt="" class="brand_img" height="50" width="130"></a>
+  </h1>
+{% endblock %}
+<!-- Changing Django-admin/login page logo with FaceIn logo - End -->
+
+<!-- Styling Django-admin page from inside - Start -->
+{% block extrastyle %}
+  <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
+<!-- Styling Django-admin page from inside - End -->

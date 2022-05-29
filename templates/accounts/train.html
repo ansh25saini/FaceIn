@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} | Train {% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- Sub Banner Start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h></h>
+            <h></h>
+            <h></h>
+            <h1>Train Data</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'admin_dashboard' %}">Admin-Dashboard</a></li>
+                <li class="active">Train Data</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner End -->
+
+<!-- Train Section Start -->
+<div style="margin-top:2em;">
+{% include 'includes/messages.html' %}</div>
+ <div class="main-title text-center">
+     <div style="margin-top:2em;">
+        <h1>Trained Data<span> Visualization</span></h1>
+     </div>
+        <p>Image Cluster Visualization</p>
+        <img src= "{% static  'img/training_visualisation.png' %}" style="width:400px; height: 400px; margin-right: auto; margin-left: auto;"/>
+</div>
+<!-- Train Section End -->
+
+{% endblock %}
+
+
+ 

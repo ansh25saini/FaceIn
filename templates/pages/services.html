@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %} | Services {% endblock %}
+{% block content %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Services</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active">Services</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Services start -->
+<div class="services content-area">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1>Our <span>Services</span></h1>
+            <p>Services that make us better than others.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="icon">
+                        <i class="flaticon-support-2"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Free Support</h3>
+                        <p>Our customer care is available 24*7. So don't hesitate to contact us whenever you have any query.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="icon">
+                        <i class="flaticon-lock"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Security</h3>
+                        <p>The data of an organization remains safe under our control. We follow no breach of data policy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-info">
+                    <div class="icon">
+                        <i class="flaticon-deal"></i>
+                    </div>
+                    <div class="detail">
+                        <h3>Trusted Customers & Investors</h3>
+                        <p>We are backed by 100+ trusted customers and investors, who have provided their support to us.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services end -->
+
+
+
+<!-- Service center strat -->
+<div class="service-center content-area-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="inside-car service-car">
+                    <iframe src="https://www.youtube.com/embed/5e0LxrLSzok" allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                <div class="about-text">
+                    <h3>Demo<span> Video</span></h3>
+                    <p>Our system is very easy to use and provides fast and accurate results in just a few clicks. For smooth functioning, we have provided you with a demo video. </p>
+                    <p class="mb-0">The video demonstrates how the admin can create dataset and then train it. Also, the admin can update the users' information and see the attendance analytics of the organization. The user can only mark the attendance in/out and can see its own analytics. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service center end -->
+
+{% endblock %}
