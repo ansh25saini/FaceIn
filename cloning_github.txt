@@ -1,0 +1,45 @@
+In order to run the project on the local server, follow these steps:
+
+1. Clone the Github repository
+
+2. Make virtual environment env:
+                                python -m venv env 
+                                   
+3. Activate virtual environment env: 
+                                   env/Scripts/activate
+
+4. Before installing requirements.txt, install cmake because without it, dlib cannot be installed and there will be a error, so, 
+                                                                                                                                pip install cmake==3.22.4
+
+5. After that install dlib==19.24.0,
+                                   pip install dlib==19.24.0
+
+6. After installing dlib and cmake, install rest of the requirements:
+                                                                    pip install -r requirements.txt
+
+7. Do the following command one by one :
+                                        python manage.py makemigrations
+
+                                        python manage.py migrate
+
+8. Before running the project, make sure to do a final change, go to 
+     env/Lib/site-packages/imutils/facealigner.py file  
+     and change the syntax of eyescenter (in my file it is in 64th line) 
+     from :
+
+        eyesCenter = ((leftEyeCenter[0] + rightEyeCenter[0]) // 2,
+            (leftEyeCenter[1] + rightEyeCenter[1]) // 2)
+ 
+to
+
+
+        eyesCenter = (int((leftEyeCenter[0] + rightEyeCenter[0]) // 2),
+                     int((leftEyeCenter[1] + rightEyeCenter[1]) // 2))
+
+##Make sure you follow correct indentation (of 2 spaces, as original one) 
+while  changing the above syntax; and finally save the file;                              
+
+Without the int keyword,   can't parse 'center'. Sequence item with index 0 has a wrong type, error will be shown while taking images.
+
+9. Finally to run the project,
+                              python manage.py runserver

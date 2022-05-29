@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from matplotlib.animation import FFMpegFileWriter
 from face_in.settings import BASE_DIR
 from django.db.models import Count
 from .models import Present, Time
