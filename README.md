@@ -22,19 +22,22 @@
 * [Challenges Faced and Learnings](#💡-challenges-faced-and-learnings)
 * [Limitations and Scope](#scope)
 * [Bug Reporting](#bug)
-* [Feature Requests](#feature-request)
+* [Feature Request](#feature-request)
 
 
 <a id="features"></a>
 ## 🚀 Features
 - Actionable and simple UI. 
-- Signing Up using basic username/password method, provided by organization to the user.
+- Signing In using basic username/password method, provided by organization to the user.
 - Ability to mark real time attendance.
 - Send instant email whenever the attendance is marked in/out.
-- Show advanced analytics to the user, related to the attendance.
+- Show attendance analytics to the user.
+- Show attendance anaytics of the organization to the admin.
+- Accuracy of the model is more than 99%.
+- Django default admin panel also customized, in accordance with the website design.
 - Automatic disappearing of notification messages like "You are now logged in", exactly after 4 seconds.
-- Update profile option provided in the admin-dashboard.
-- Contact form provided to raise any type of query by the user.
+- Update user profile option, provided in the admin-dashboard.
+- Contact form provided to raise any type of query that anyone may have.
 - Instant email notification to admin whenever someone fills the contact form.
 - Use of PostgreSQL Database.
 - Completely Responsive Website.
@@ -52,13 +55,13 @@
 ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white)
 
-***Python*** : The complete project is written in pyhton programming language.
+***Python*** : The complete project is written in python programming language.
 
-***OpenCV*** : OpenCv and imutils have been used for image processing.
+***OpenCV*** : OpenCV and imutils have been used for image processing.
 
-***Django*** : Open-Source python based web framework that uses MVT architectural pattern
+***Django*** : Open-source python based web framework that uses MVT architectural pattern, is used.
 
-***PostgreSQL*** : Open-Source relational database management system used in this project
+***PostgreSQL*** : Open-source relational database management system used in this project
 
 ***VIsual Studio Code*** : Editor used in the project
 
@@ -74,7 +77,7 @@
 ## ⚡️ Agile Development Methodology
 
 I followed Agile Development Methodology to complete the project. Agile is an easy to handle and flexible development process which relies on light(short-termed) planning procedures. It allows faster adjustments and reviewing with an aim of keeping the principle of zero bug bounce.
-The cpmplete task has been completed in 4 sprints, as depicted in the images below:
+The complete task has been completed in 4 sprints, as depicted in the images below:
 
 <img width="705" alt="agile-1" src="https://user-images.githubusercontent.com/103529456/170895598-4d784122-8224-4639-afd3-0265091d049b.png">
 
@@ -123,12 +126,12 @@ The cpmplete task has been completed in 4 sprints, as depicted in the images bel
   ```
       
 7. go to *env/Lib/site-packages/imutils/facealigner.py* file and change the syntax of eyescenter (in my file it is in 64th line)
-  * from
+  * from this
   ```javascript
    eyesCenter = ((leftEyeCenter[0] + rightEyeCenter[0]) // 2,
             (leftEyeCenter[1] + rightEyeCenter[1]) // 2)
   ```
-  * to
+  * to this
   ```javascript
   eyesCenter = (int((leftEyeCenter[0] + rightEyeCenter[0]) // 2),
             int((leftEyeCenter[1] + rightEyeCenter[1]) // 2)
@@ -192,7 +195,7 @@ Tells about what FaceIn is, its customers and their valuable reviews.
 <img width="1436" alt="about-1" src="https://user-images.githubusercontent.com/103529456/170898992-c952c8be-a451-4d70-8289-792a5d76c06c.png">
 
 ### Services Page
-Shows our services as well as contain a demo video on how to use FacIn
+Shows our services as well as contain a demo video on how to use FaceIn.
 
 <img width="1440" alt="services" src="https://user-images.githubusercontent.com/103529456/170899022-72464a35-c7e8-48e3-bead-5ae78b7dec50.png">
 
@@ -219,9 +222,9 @@ Common for both user and admin. Only admin can register any user and the user ha
 Three functionalities are present- Mark-in/Mark-out/Analytics
 * Mark-in/Mark-out- 
      * To check the email functionality, enter your correct email address to get the email notification from noreplyfacein@gmail.com
-     * To make the attendance, only one correct user can be identified at a time with correct login credentials; if frame conatins more than one user 
+     * To mark the attendance, only one correct user can be identified at a time with correct login credentials; if frame conatins more than one user 
      at a time whose faces can be recognized then an unauthorized message will be shown.
-     So to make, enter correct username of yours and only you should be in the frame.
+     So to mark, enter correct username of yours and only you should be in the frame.
     * Press p after you think that you have been correctly recognized by the system
     * Video feed will not close until you press p.
      
@@ -230,23 +233,27 @@ Three functionalities are present- Mark-in/Mark-out/Analytics
 <img width="1440" alt="mark-in" src="https://user-images.githubusercontent.com/103529456/170902867-4ebe5ef3-bf97-4389-abfc-9218624bf082.png"> 
 
 ### Admin Dashboard Page
-1. New Registration: Provided with register, add images and train dataset, button. For Training option:
+1. New Registration: Provided with register, add images and train dataset, button. 
+ * For Training option:
     * Training happens of all the users in one go. 
     * Be patient and don't refresh in between. 
     * After complete training, a new window will automatically pop up showing the results.  
+ * For Add Image option:
+    * Images have to be captured in real environment so as to tackle the effect of brightness on recognition.
+    * 30 images are captured in one go and stored in the database.
 
 <img width="1440" alt="admin_dashboard_features" src="https://user-images.githubusercontent.com/103529456/170899000-a0d7af03-dae5-42b6-ad32-c7d15e2f3b5d.png">   
 
 <img width="1440" alt="register" src="https://user-images.githubusercontent.com/103529456/170899021-bb0b168e-ae02-428e-a4db-8def162c3897.png">
 
-2. Other features: The admin can also see the attendance analytics of the whole organization, update user profile and is also provided with a demo video, in case of a doubt.
+2. Other features: The admin can also see the attendance analytics of the whole organization, update user profile and is also provided with a demo video to clear all doubts.
 
 <img width="1440" alt="admin_dashboard_others" src="https://user-images.githubusercontent.com/103529456/170899001-5dc4b785-56b7-4b7e-bd68-ce0d059520bb.png">  
 
 <img width="1440" alt="admin_dashboard_others" src="https://user-images.githubusercontent.com/103529456/170898995-7a9c978e-1f49-4be6-a3f6-3333888825cb.png"> 
 
 ### Admin Django Panel
-The default django-administartion has been customized according to the websie style. Morever, features, reviews, current customers are dynamic and can be changed through this panel.
+The default django-administartion has been customized according to the website style. Morever, features, reviews, current customers are dynamic and can be changed through this panel.
 
 To go to admin panel, use */admin* in the web address.
 
@@ -264,7 +271,7 @@ The website is completely responsive.
 
 - Spent several hours learning the MVT architecture of Django and Face Recognition Models and then began the design-build process of this project.
 - Never implemented any ML model in a web application, so learnt about the same and implemenetd it.
-- Came across a major fault in design- presence of the register button on the home page. I realized that in this way any user, outside the organizaton can register, so changed the design. 
+- Came across a major fault in design:- presence of the register button on the home page. I realized that in this way any user, outside the organizaton can register, so changed the design. 
 - Found a major error that app was recognizing and marking attendance of anybody (if the user was already registered) that was in the frame, even if the credentials were of different user. Changed the python code, so that only user whose has logged in can be marked.
 - Learnt about PostgreSQL Database
 
@@ -272,7 +279,7 @@ The website is completely responsive.
 ## 🚧 Limitations and Scope
 
 * Limitations
-   * Face recognition accuracy gets severly gets affected by brightness.- To counter this, many image of the individual are added in one go in real environment, but certainly then also brightness has a role to play.
+   * Face recognition accuracy severly gets affected by brightness.- To counter this, many images of the individual are added in one go in real environment conditions and not just a single image, but certainly then also brightness has a role to play.
    * Training a dataset of a large number of users takes a very long time. Though training isn't something that needs to be done frequently, it would be better if a classifier taking less time while maintaining the accuracy can be built.
    * In this project 30 images of each employee are taken for better accuracy. 30 Images per employee in a larger organization can consume a massive volume to store the images.
 * Scope
@@ -289,3 +296,10 @@ Feel free to [open an issue](https://github.com/ansh25saini/FaceIn/issues) on Gi
 - Feel free to [open an issue](https://github.com/ansh25saini/FaceIn/issues) on GitHub to add any additional features you feel could enhance this project.  
 - You can also discuss and provide suggestions to me on [LinkedIn](https://www.linkedin.com/in/ansh25saini/).
 
+---------
+  ```javascript
+  if (youEnjoyed) {
+      ⭐ starThisRepository();
+  }
+  ```
+-----------
