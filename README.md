@@ -125,7 +125,7 @@ The complete task has been completed in 4 sprints, as depicted in the images bel
    python manage.py migrate
   ```
       
-7. go to *env/Lib/site-packages/imutils/facealigner.py* file and change the syntax of eyescenter (in my file it is in 64th line)
+7. go to *env/Lib/site-packages/imutils/face_utils/facealigner.py* file and change the syntax of eyesCenter (in my file it is in 64th line)
   * from this
   ```javascript
    eyesCenter = ((leftEyeCenter[0] + rightEyeCenter[0]) // 2,

@@ -23,8 +23,8 @@ In order to run the project on the local server, follow these steps:
                                         python manage.py migrate
 
 8. Before running the project, make sure to do a final change, go to 
-     env/Lib/site-packages/imutils/facealigner.py file  
-     and change the syntax of eyescenter (in my file it is in 64th line) 
+     env/Lib/site-packages/imutils/face_utils/facealigner.py file  
+     and change the syntax of eyesCenter (in my file it is in 64th line) 
      from :
 
         eyesCenter = ((leftEyeCenter[0] + rightEyeCenter[0]) // 2,
