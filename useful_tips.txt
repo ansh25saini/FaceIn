@@ -6,10 +6,10 @@ To make the attendance, only one correct user can be identified at a time with c
 at a time whose faces can be recognized then an unauthorized message will be shown.
 So to make, enter correct username of yours and only you should be in the frame.
 Press p after you think that you have been correctly recognized by the system
-video feed will nopt close until you press p
+video feed will not close until you press p
 
 Users Dataset can be added only by the admin. For a single user the system will take 10 images as dataset. To Train images, be pateint as system takes approx 1 min for 3-4 users.
 
 Both users and admin can see analytics- user can see own only and admin can see of all the users.
 
-To go to admin panel provided by django, use /admin int he address bar.
+To go to admin panel provided by django, use /admin in the address bar.

@@ -95,7 +95,7 @@ def dataset_creation(username):
         cv2.waitKey(1)
 
         #To get out of the loop
-        if(sampleNum>10):
+        if(sampleNum>30):
             break
 
     #Stoping the videostream
